@@ -1,9 +1,18 @@
 import express from "express";
+import AuthRoute from './routes/auth.route';
+
 const app = express();
-const port = 3000;
+var port = process.env.PORT || 3000;
+
+var bodyParser = require("body-parser");
+var cookieParser = require("cookie-parser");
+
+app.use(express.static('public'));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(cookieParser());
+
+const authRoute = new AuthRoute();
+authRoute.authRoute(app);
 
 app.listen(port, () => console.log(`Listening on port ${port}`));
-
-app.get("/express_backend", (req: any, res: any) => {
-  res.send({ express: "YOUR EXPRESS BACKEND IS CONNECTED TO REACT" });
-});
