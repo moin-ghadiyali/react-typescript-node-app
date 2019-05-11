@@ -1,0 +1,16 @@
+#node modules
+/node_modules
+
+#dist 
+/dist
+
+#npm packages
+package-lock.json
+# tsconfig.json
+
+# IDE - VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
