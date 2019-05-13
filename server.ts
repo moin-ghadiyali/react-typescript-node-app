@@ -7,6 +7,7 @@ var port = process.env.PORT || 3000;
 var bodyParser = require("body-parser");
 var cookieParser = require("cookie-parser");
 var mongoose = require('./config/mongoose.config');
+var swagger = require('./routes/swagger.route');
 
 app.use(express.static('public'));
 app.use(bodyParser.json());
@@ -16,4 +17,8 @@ app.use(cookieParser());
 const authRoute = new AuthRoute();
 authRoute.authRoute(app);
 
+app.use('/', swagger);
+
 app.listen(port, () => console.log(`Listening on port ${port}`));
+
+module.exports = app;
