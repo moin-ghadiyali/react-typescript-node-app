@@ -21,6 +21,22 @@ export default class AuthController {
             }
         })
     }
+
+    userInfo(req:any, res:any, next:any) {
+        Auth.find({}, (error:any, result:any) => {
+            if(error) {
+                res.send({
+                    message: "Record Error!",
+                    result: error
+                })
+            } else {
+                res.send({
+                    message: "Record Created!",
+                    result: result
+                })
+            }
+        })
+    }
 }
 
 export const authController = new AuthController();

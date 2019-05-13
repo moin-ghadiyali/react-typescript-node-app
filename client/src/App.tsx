@@ -1,17 +1,18 @@
 import React, { Component } from 'react';
 
 class App extends Component {
-state = {
-    data: null
+
+state:any = {
+    data: Object
   };
 
   componentDidMount() {
     this.callBackendAPI()
-      .then(res => this.setState({ data: res.express }))
+      .then(res => this.setState({ data: res.message }))
       .catch(err => console.log(err));
   }
   callBackendAPI = async () => {
-    const response = await fetch('/express_backend');
+    const response = await fetch('/v1/auth');
     const body = await response.json();
 
     if (response.status !== 200) {
