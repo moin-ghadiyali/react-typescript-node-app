@@ -6,6 +6,7 @@ var port = process.env.PORT || 3000;
 
 var bodyParser = require("body-parser");
 var cookieParser = require("cookie-parser");
+var mongoose = require('./config/mongoose.config');
 
 app.use(express.static('public'));
 app.use(bodyParser.json());
