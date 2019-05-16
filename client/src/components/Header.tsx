@@ -15,7 +15,6 @@ export default class Header extends React.Component<any, any> {
     render() {
         return(
             <div>
-                <h1 className="header">Hello Frieds</h1>
                 <h1 className="header">{this.state.user}</h1>
                 <h1>{this.state.age}</h1>
                 <Footer name="Moin" />
