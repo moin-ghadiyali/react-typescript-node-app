@@ -1,30 +1,29 @@
 import React, { Component } from 'react';
+import Header from './components/Header';
+import Footer from './components/Footer';
 
-class App extends Component {
+class App extends Component<any> {
 
-state:any = {
-    data: null
-  };
+  // componentDidMount() {
+  //   this.callBackendAPI()
+  //     .then(res => this.setState({ data: res.message }))
+  //     .catch(err => console.log(err));
+  // }
+  // callBackendAPI = async () => {
+  //   const response = await fetch('/v1/auth');
+  //   const body = await response.json();
 
-  componentDidMount() {
-    this.callBackendAPI()
-      .then(res => this.setState({ data: res.message }))
-      .catch(err => console.log(err));
-  }
-  callBackendAPI = async () => {
-    const response = await fetch('/v1/auth');
-    const body = await response.json();
-
-    if (response.status !== 200) {
-      throw Error(body.message) 
-    }
-    return body;
-  };
+  //   if (response.status !== 200) {
+  //     throw Error(body.message) 
+  //   }
+  //   return body;
+  // };
 
   render() {
     return (
       <div>
-        <p>{this.state.data}</p>
+        <Header />
+        <Footer />
       </div>
     );
   }
