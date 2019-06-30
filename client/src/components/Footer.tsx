@@ -1,24 +1,11 @@
 import React from 'react';
+import '../styles/Footer.css';
 
 export default class Footer extends React.Component<any, any> {
-    constructor(props:any) {
-        super(props);
-
-        this.state = { nameNew: this.props.name }
-    }
-
-    handleChange(e:any) {
-        this.setState({
-           nameNew: 'MERN' 
-        });
-    }
-
     render() {
         return(
             <div>
-                <h1>{this.props.name}</h1>
-                <h1>{this.state.nameNew}</h1>
-                <button onClick={this.handleChange.bind(this)} ></button>
+                <h1>Hello Moin</h1>
             </div>
         )
     }

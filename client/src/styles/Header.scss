@@ -1,3 +1,15 @@
 .header {
-    color: blue;
+    position: fixed;
+    background: rgba(1, 14, 24, 0.911);
+    padding: 2rem;
+    margin: 0;
+    width: 100%;
+
+    .login-signup-btn {
+        background: yellow;
+        padding: 1rem;
+        color: white;
+        border: 3px solid yellow;
+    }
+
 }
