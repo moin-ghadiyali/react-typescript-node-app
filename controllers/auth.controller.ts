@@ -7,8 +7,11 @@ export default class AuthController {
             email: req.body.email
         }
 
-        Auth.create(schema, (error:any, result:any) => {
-            if(error) {
+    userAuthCreate(req: any, res: any, next: any) {
+        Auth.find({ 'phone': req.body.phone }, (error: any, result: any) => {
+            var rest = Buffer.from(result);
+            var len = rest.length;
+            if (error) {
                 res.send({
                     message: "Record Error!",
                     error: error
